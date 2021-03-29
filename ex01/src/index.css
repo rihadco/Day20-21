@@ -1,0 +1,99 @@
+body {
+	text-align: center;
+	font-size: 16px;
+	line-height: 1.2em;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
+textarea{
+	width: 720px;
+	height: 350px;
+	resize: none;
+	outline: none;
+    color: rgb(22, 111, 212);
+}
+
+#virtualKey {
+	display: block;
+	margin: 0 auto;
+	width: 720px;
+	max-width: 100%;
+}
+
+.key-holder {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(8.33%, 1fr));
+	grid-gap: 0;
+	grid-auto-rows: minmax(40px, auto);
+	grid-auto-flow: dense;
+	width: 720px;
+	box-sizing: border-box;
+}
+
+.key-holder > button {
+	border-radius: 0px;
+	border: 0.5px solid #ccc;
+	cursor: pointer;
+	outline: none;
+    color: rgb(255, 255, 255);
+}
+.key-holder > button {
+    background-color: black;
+}
+.key-holder > button:hover {
+	background-color: #f7f7f7;
+    color: blue;
+}
+
+.key-holder.change-caps > button,
+.key-holder.shift-caps > button {
+	text-transform: uppercase;
+}
+
+.key-holder.change-caps > button.caps,
+.key-holder.shift-caps > button.shift,
+.key-holder > button:active {
+	background-color: #ddd;
+}
+
+.key-holder.change-caps.key-holder.shift-caps > button {
+	text-transform: lowercase;
+}
+
+.key-holder > button.f-btn {
+	text-transform: capitalize !important;
+}
+
+button.rectangle {
+	grid-column-end: span 3;
+	grid-row-end: span 1;
+}
+
+button.rectangle-1 {
+	grid-column-end: span 2;
+	grid-row-end: span 1;
+}
+
+button.rectangle-2 {
+	grid-column-end: span 9;
+	grid-row-end: span 1;
+}
+
+@media screen and (min-width: 720px){
+	.key-holder{
+		grid-auto-rows: minmax(50px, auto);
+	}
+}
+
+@media screen and (min-width: 920px){
+	.key-holder{
+		grid-auto-rows: minmax(60px, auto);
+	}
+}
